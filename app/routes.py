@@ -2,7 +2,7 @@
 from flask import render_template, flash, redirect, url_for,  request
 from werkzeug.urls import url_parse
 
-from app import app
+from app import app,dbr
 
 from config import Config
 
@@ -27,11 +27,26 @@ def welcome():
         
     return render_template('index.html', pagedat=pagedat)
 
-@app.route('/boa/<boa_id>/<float:boa_lat>/<float:boa_lon>', methods=['GET'])
-def update_boa_pos (boa_id,boa_dat):
-    print (boa_id)
-    print (boa_dat)
-    
-    return "success", 200
-    
+@app.route('/boa/<boa_id>', methods=['GET','POST'])
+def update_boa_pos (boa_id):
+    if request.method == 'POST':
+        print ("boa_id",boa_id)
+        content = request.json
+        print (content,type(content),len(content))
+        dbr.hmset (boa_id,content)
+        return "wpost",200
+    else:
+        val =dbr.hgetall (boa_id)
+        print (type(val),val)
+        return "rget",200
+
+
+@app.route('/boa', methods=['GET'])
+def get_boa_dat ():
+    s = ""
+    for boa in dbr.keys():
+         s = s + str(boa)
+         print (boa)
+         s = s + str(dbr.hgetall (boa))
+    return s,200     
 
