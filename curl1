@@ -1,0 +1,15 @@
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"role"   : "bolina","home"    : "[46.136770,9.364749]","rc"      : "[46.147919, 9.357]","target"  :"[46.1475,9.345]","current" :"[46.147,9.35]"}' \
+  http://localhost:5000/boa/1
+
+
+
+
+  {'coord':"[46.136770,9.364749]" ,'icon':"home",     'color':"yellow",'spin':"false"},
+                 {'coord':"[46.1475,9.345]"      ,'icon':"arrow-up", 'color':"blue",  'spin':"false"},
+                 {'coord':"[46.147,9.35]"        ,'icon':"arrow-up", 'color':"blue",  'spin':"true"},
+
+
+
+  '{"role"   : "bolina","home"    : "[46.136770,9.364749]","rc"      : "[46.147919, 9.357]","target"  :"[46.1475,9.345]","current" :"[46.147,9.35]"}'

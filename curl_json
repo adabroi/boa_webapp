@@ -1,0 +1,10 @@
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data   {"role": "bolina"}\
+  http://localhost:5000/boa/1
+
+
+
+,'home':"[46.136770,9.364749]",'rc':"46.147919, 9.357]",'target'  : "[46.1475,9.345]",'current' : "[46.147,9.35]"} 
+
+

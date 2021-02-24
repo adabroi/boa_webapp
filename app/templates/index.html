@@ -46,7 +46,7 @@
       
 	  
 	  {% for markerpoint in pagedat.marker %}
-	  L.marker({{ markerpoint['coord']}}, {icon: L.AwesomeMarkers.icon({icon: '{{ markerpoint['icon']}}', prefix: 'fa', markerColor: '{{ markerpoint['color']}}', spin:{{ markerpoint['spin']}}}) }).bindPopup('RC').addTo(map);
+	  L.marker({{ markerpoint['coord']}}, {icon: L.AwesomeMarkers.icon({icon: '{{ markerpoint['icon']}}', prefix: 'fa', markerColor: '{{ markerpoint['color']}}', spin:{{ markerpoint['spin']}}}) }).bindPopup('{{ markerpoint['popup']}}').addTo(map);
 	      
 	  {% endfor %}
 	 
