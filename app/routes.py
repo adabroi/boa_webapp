@@ -71,7 +71,7 @@ def get_markers ():
     
     return marker.values()    
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/w_1eapm4qqw', methods=['GET', 'POST'])
 def welcome():
 
     #polvertex = "[46.147919, 9.357],[46.1495, 9.351365],[46.1475, 9.345],[46.1455, 9.351365],[46.147,9.357730]"
@@ -88,7 +88,7 @@ def welcome():
         
     return render_template('index.html', pagedat=pagedat)
 
-@app.route('/boa/<boa_id>', methods=['GET','POST'])
+@app.route('/zaaax3_ftu/boa/<boa_id>', methods=['GET','POST'])
 def update_boa_pos (boa_id):
     if request.method == 'POST':
         print ("boa_id",boa_id)
@@ -108,7 +108,7 @@ def update_boa_pos (boa_id):
         return "rget",200
 
 
-@app.route('/boa', methods=['GET'])
+@app.route('/zaaax3_ftu/boa', methods=['GET'])
 def get_boa_dat ():
     s = "boa_data --->"
     for boa in dbr.keys():
