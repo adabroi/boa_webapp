@@ -1,0 +1,15 @@
+#/etc/systemd/system/boa_webapp.service
+
+[Unit]
+Description=Gunicorn instance to serve boa_webapp
+After=network.target
+
+[Service]
+User=roboapp
+Group=www-data
+WorkingDirectory=/home/roboapp/boa_webapp
+Environment="PATH=/home/roboapp/boa_webapp"
+ExecStart=/usr/bin/gunicorn --workers 3 --bind unix:app.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target

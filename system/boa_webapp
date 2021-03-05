@@ -1,0 +1,16 @@
+# /etc/nginx/sites-enabled/boa_webapp
+
+server {
+    listen 80;
+    server_name 15.161.230.66;
+
+    location /w_1eapm4qqw {
+        include proxy_params;
+        proxy_pass http://unix:/home/roboapp/boa_webapp/app.sock;
+    }
+
+    location /zaaax3_ftu/ {
+        include proxy_params;
+        proxy_pass http://unix:/home/roboapp/boa_webapp/app.sock;
+    }
+}
